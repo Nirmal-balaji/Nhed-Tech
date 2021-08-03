@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<meta charset="utf-8">
+<head>
+ <title>Nhedtech Online Educational Platform</title>
+ <link rel="shortcut icon" href="favicon.JPG">
+ <style media="screen">
+   body,html{
+     margin: 0;
+     padding: 0;
+   }
+
+
+   h1{
+     position: absolute;
+     padding: 3px;
+     float: left;
+     margin-left: 2%;
+     margin-top: 10px;
+   }
+
+   nav{
+     background: green;
+     height: 80px;
+     width: 100%;
+   }
+
+   nav ul{
+     float: right;
+     margin-right: 20px;
+   }
+
+   nav ul li{
+     display: inline-block;
+     line-height: 80px;
+     margin: 0 5px;
+   }
+
+   nav ul li a{
+     color:white;
+     font-size: 17px;
+     padding: 7px 13px;
+     border-radius: 3px;
+     text-transform: uppercase;
+   }
+
+   a:hover{
+     background: #3366ff;
+     transition: .5s;
+   }
+
+   .button{
+     background: white;
+     padding: 10px 15px;
+     font-weight: bolder;
+     text-transform: uppercase;
+     font-size: 18px;
+     border-radius: 5px;
+     box-shadow: 6px 6px 29px -4px rgba(0,0,0,0.75);
+     margin-top: 25px;
+     text-decoration: none;
+     transition: 0.4s;
+   }
+
+   .popup{
+     background: rgba(0,0,0,0.6);
+     width: 100%;
+     height: 100%;
+     position: absolute;
+     top: 0;
+     display: none;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+   }
+
+   .popup-content{
+     height: 250px;
+     width: 500px;
+     background: white;
+     padding: 20px;
+     border-radius: 5px;
+     position: relative;
+   }
+
+   input{
+     margin: 20px auto;
+     display: block;
+     width: 25%;
+     padding: 8px;
+     border: 1px solid gray;
+   }
+
+   .close{
+     position: absolute;
+     top: -15px;
+     right: -15px;
+     background: white;
+     height: 20px;
+     width: 20px;
+     border-radius: 50%;
+     box-shadow: 6px 6px 29px -4px rgba(0,0,0,0.75);
+     cursor: pointer;
+   }
+
+   .popups{
+     background: rgba(0,0,0,0.6);
+     width: 100%;
+     height: 100%;
+     position: absolute;
+     top: 0;
+     display: none;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+   }
+
+   .popups-content{
+     height: 460px;
+     width: 500px;
+     background: white;
+     padding: 20px;
+     border-radius: 5px;
+     position: relative;
+   }
+
+   div.talk{
+     background-color: rgba(0,0,0,0.2);
+     width: 50%;
+   }
+
+   #hea{
+     background-color: blue;
+   }
+
+   #pho{
+     position: fixed;
+     top: 550px;
+   }
+
+
+ </style>
+</head>
+<body style="background-color:green;">
+
+
+    <h1><font color="white">NHED TECH</font></h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#" onclick="ppus()">Sign up</a></li>
+        <li><a href="#" onclick="ppu()">Login</a></li>
+        <li><a href="#">Buy a Course</a></li>
+        <li><a href="#">Success Stories</a></li>
+      </ul>
+    </nav>
+    <br>
+    <center>
+        <h2>
+          <font color="white">Welcome to Nhed Pay Section.</font>
+        <br><br>
+        </h2>
+        <h3>Please Scan this UPI QR Code and pay the Amount</h3>
+        <div class="">
+          <img src="QR.jpg" alt="">
+        </div><br><br>
+        <div class="">
+          <h3>Once you paid the Amount Fill the form for Verification.</h3>
+        <form id="myForm" action="index.html" method="post">
+          <label>Name</label>
+          <input type="text" name="Name" value="">
+
+          <label>Email ID</label>
+          <input type="text" name="Email ID" value="">
+
+          <label>Paid Amount</label>
+          <input type="text" name="Paid Amount" value="">
+
+          <label>UPI Reference Number (Which is available in the Amount transfer SMS from your Bank)</label>
+          <input type="text" name="UPI" value="">
+
+          <button type="submit" name="button" id="submit">Submit</button>
+          <br><br><br>
+        </form>
+        </div>
+
+      </center>
+
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script>
+                $(function () {
+                    $('#myForm').submit(function (e) {
+                        e.preventDefault();
+                        var myData = $('form#myForm :input').serialize();
+                        var url = 'https://script.google.com/macros/s/AKfycbyGrXd55bw-zMMoVMvvnJdT1YEZ0hvPZvucPZSD9ttlbr37HZemrXns_afh262jYQM_/exec'
+                        console.log(myData)
+                        $.ajax({
+                            url: url
+                            , method: 'POST'
+                            , data: myData
+                            , success: function (data) {
+                                console.log(data)
+                                alert("Your Data is Submitted for Verification");
+                            }
+                        })
+                    })
+                  });
+           </script>
+
+
+  </body>
+</html>
