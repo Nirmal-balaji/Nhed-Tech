@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Contact Us</title>
+    <link rel="shortcut icon" href="favicon.JPG">
+    <style media="screen">
+      body{
+        background: green;
+        font-size: 14px;
+      }
+
+      .container{
+        width:80%;
+        margin: 50px auto;
+      }
+
+      .contact-box{
+        background: #fff;
+        display: flex;
+      }
+
+      .contact-left{
+        flex-basis: 100%;
+        padding: 40px 60px;
+      }
+
+      .contact-right{
+        flex-basis: 40%;
+        padding: 40px;
+        background: #1C00B5;
+        color: #fff;
+      }
+
+      h1{
+        margin-bottom: 10px;
+
+      }
+
+      .container p{
+        margin-bottom: 40px;
+      }
+
+      .input-row{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      .input-row .input-group{
+        flex-basis: 45%;
+      }
+
+      input{
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        outline: none;
+        padding-bottom: 5px;
+
+      }
+
+      textarea{
+        width:100%;
+        border: 1px solid #ccc;
+        outline: none;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      label{
+        margin-bottom: 6px;
+        display: block;
+        color: #1c00b5;
+      }
+
+      button{
+        background: #1c00b5;
+        width: 100px;
+        border: none;
+        outline: none;
+        color: #fff;
+        height: 35px;
+        border-radius: 30px;
+        margin-top: 20px;
+      }
+
+      .contact-left h3{
+        color: #1c00b5;
+        font-weight: 600;
+        margin-bottom: 30px;
+      }
+
+      .contact-right h3{
+        font-weight: 600;
+        margin-bottom: 30px;
+      }
+
+      tr td:first-child{
+        padding-right: 20px;
+
+      }
+
+
+                  h1{
+                    position: absolute;
+                    padding: 3px;
+                    float: left;
+                    margin-left: 2%;
+                    margin-top: 10px;
+                  }
+
+                  nav{
+                    background: green;
+                    height: 80px;
+                    width: 100%;
+                  }
+
+                  nav ul{
+                    float: right;
+                    margin-right: 20px;
+                  }
+
+                  nav ul li{
+                    display: inline-block;
+                    line-height: 80px;
+                    margin: 0 5px;
+                  }
+
+                  nav ul li a{
+                    color:white;
+                    font-size: 17px;
+                    padding: 7px 13px;
+                    border-radius: 3px;
+                    text-transform: uppercase;
+                  }
+
+                  a:hover{
+                    background: #3366ff;
+                    transition: .5s;
+                  }
+
+    </style>
+  </head>
+  <body onkeypress="return disableCtrlKeyCombination(event);" onkeydown="return disableCtrlKeyCombination(event);" oncontextmenu="return false">
+    <center>
+
+          <div class="bcd">
+          <h1><font color="white">NHED TECH</font></h1>
+         <nav>
+           <ul>
+             <li><a href="file:///E:/Nedtech%20Website%20Files/Nhed%20tech%20Page/Query%20Login%20Page.html" onclick="">Query Tracker</a></li>
+             <li><a href="#" onclick="">Query Submission</a></li>
+             <li><a href="file:///E:/Nedtech%20Website%20Files/Nhed%20tech%20Page/Query%20Response%20Page.html" onclick="">Query Response</a></li>
+             </ul>
+         </nav>
+         <br>
+          </div>
+    <font color="white"><p>We Would Love to Respond your Queries regarding the Subject.</p></font>
+    <div class="contact-box">
+      <div class="contact-left">
+        <h3>Ask Your Query</h3>
+        <form id="myForm" action="index.html" method="post">
+          <div class="input-row">
+            <div class="input-group">
+              <label>Name:</label>
+              <input type="text" name="Name" placeholder="Name">
+            </div>
+            <div class="input-group">
+              <label>Student ID:</label>
+              <input type="text" name="Student ID" placeholder="Student ID">
+            </div>
+          </div>
+
+          <div class="input-row">
+            <div class="input-group">
+              <label>Email ID:</label>
+              <input type="text" name="Email ID" placeholder="Email ID">
+            </div>
+            <div class="input-group">
+              <label>Subject:</label>
+              <input type="text" name="Subject" placeholder="Subject">
+            </div>
+          </div>
+
+          <label>Query</label>
+          <textarea name="Query" rows="10" placeholder="Your Query"></textarea>
+
+          <button type="submit" id="submit">Send</button>
+        </form>
+
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script>
+          $(function () {
+              $('#myForm').submit(function (e) {
+                  e.preventDefault();
+                  var myData = $('form#myForm :input').serialize();
+                  var url = 'https://script.google.com/macros/s/AKfycbzLH1LrEaUmvBv6DZ6gi0Lt6Eyq-1vyPavOQ4XeArsPLaD1NbKYElVTYmvY2ojeyN33/exec'
+                  console.log(myData)
+                  $.ajax({
+                      url: url
+                      , method: 'POST'
+                      , data: myData
+                      , success: function (data) {
+                          console.log(data)
+
+                      }
+                  })
+              })
+            });
+     </script>
+
+      </div>
+    </div>
+  </center>
+  </body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <meta charset="utf-8">
+    <title>Nhed Tech Learning Program</title>
+        <link rel="shortcut icon" href="favicon.jpg">
+    <style media="screen">
+      <style media="screen">
+        body{
+          background-image:url(sky.jpg);
+          background-size: cover;
+          background-attachment: fixed;
+        }
+
+
+              .popup{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                margin-left: 32%;
+                margin-top:10%;
+              }
+
+              .popup-content{
+                height: 35%;
+                width: 30%;
+                background: white;
+                padding: 20px;
+                border-radius: 5px;
+                position: relative;
+              }
+
+
+
+
+            h1{
+              position: absolute;
+              padding: 3px;
+              float: left;
+              margin-left: 2%;
+              margin-top: 10px;
+            }
+
+            nav{
+              background: green;
+              height: 80px;
+              width: 100%;
+            }
+
+            nav ul{
+              float: right;
+              margin-right: 20px;
+            }
+
+            nav ul li{
+              display: inline-block;
+              line-height: 80px;
+              margin: 0 5px;
+            }
+
+            nav ul li a{
+              color:white;
+              font-size: 17px;
+              padding: 7px 13px;
+              border-radius: 3px;
+              text-transform: uppercase;
+            }
+
+            a:hover{
+              background: #3366ff;
+              transition: .5s;
+            }
+
+            .button{
+              background: white;
+              padding: 10px 15px;
+              font-weight: bolder;
+              text-transform: uppercase;
+              font-size: 18px;
+              border-radius: 5px;
+              box-shadow: 6px 6px 29px -4px rgba(0,0,0,0.75);
+              margin-top: 25px;
+              text-decoration: none;
+              transition: 0.4s;
+            }
+
+
+            input{
+              margin: 20px auto;
+              display: block;
+              width: 50%;
+              padding: 8px;
+              border: 1px solid gray;
+            }
+
+            .close{
+              position: absolute;
+              top: -15px;
+              right: -15px;
+              background: white;
+              height: 20px;
+              width: 20px;
+              border-radius: 50%;
+              box-shadow: 6px 6px 29px -4px rgba(0,0,0,0.75);
+              cursor: pointer;
+            }
+
+
+            .cde{
+              display: none;
+            }
+
+            .def{
+              display: none;
+            }
+
+            #qu{
+              background: white;
+              width: 100%;
+            }
+
+            #loadData{
+              background: white;
+              padding: 10px 15px;
+              font-weight: bolder;
+              text-transform: uppercase;
+              font-size: 18px;
+              border-radius: 5px;
+              box-shadow: 6px 6px 29px -4px rgba(0,0,0,0.75);
+              margin-top: 25px;
+              text-decoration: none;
+              transition: 0.4s;
+            }
+
+
+    </style>
+    <script language="JavaScript">
+
+function disableCtrlKeyCombination(e)
+{
+//list all CTRL + key combinations you want to disable
+var forbiddenKeys = new Array('a', 'i', 'c', 'x', 'v', 'j' , 'w' , 'u');
+var key;
+var isCtrl;
+if(window.event)
+{
+key = window.event.keyCode;     //IE
+if(window.event.ctrlKey)
+isCtrl = true;
+else
+isCtrl = false;
+}
+else
+{
+key = e.which;     //firefox
+if(e.ctrlKey)
+isCtrl = true;
+else
+isCtrl = false;
+}
+//if ctrl is pressed check if other key is in forbidenKeys array
+if(isCtrl)
+{
+for(i=0; i<forbiddenKeys.length; i++)
+{
+//case-insensitive comparation
+if(forbiddenKeys[i].toLowerCase() == String.fromCharCode(key).toLowerCase())
+{
+alert('Key combination CTRL + '+String.fromCharCode(key) +' has been disabled.');
+return false;
+}
+}
+}
+return true;
+}
+</script>
+  </head>
+    <body onkeypress="return disableCtrlKeyCombination(event);" onkeydown="return disableCtrlKeyCombination(event);" oncontextmenu="return false" bgcolor="green">
+    <div class="abc">
+      <h1><font color="white">NHED TECH</font></h1>
+    <center>
+
+    <div class="bcd">
+    <h1><font color="white">NHED TECH</font></h1>
+   <nav>
+     <ul>
+       <li><a href="file:///E:/Nedtech%20Website%20Files/Nhed%20tech%20Page/Query%20Login%20Page.html" onclick="">Query Tracker</a></li>
+       <li><a href="file:///E:/Nedtech%20Website%20Files/Nhed%20tech%20Page/Query%20Submission%20Page.html" onclick="">Query Submission</a></li>
+       <li><a href="#" onclick="">Query Response</a></li>
+     </ul>
+   </nav>
+   <br>
+    </div>
+
+    <div id="qr">
+      <input id="ui" type="text" name="" value="" placeholder="Query ID">
+      <button id="loadData" type="button" name="button">Search</button>
+    </div>
+    <br>
+    <div id="qu" color="white">
+
+    </div>
+    <br>
+
+        <script>
+    $(function () {
+         $('#loadData').click(function () {
+                  var x = document.getElementById("ui").value;
+                  if(x=="")
+                  {
+
+                  }
+                  else {
+
+                    var url1 = 'https://script.google.com/macros/s/AKfycbzv1keEnUdM1BNYtIRT01tJm7_3VgL8hs6gYDSyUM4r8DkhVUDISo4-IgcqILtjcYSjrQ/exec'
+                    $.getJSON(url1, function (data) {
+                      var flag=0;
+                      var x = document.getElementById("ui").value;
+                      console.log(x);
+                      var html = '<html>'
+                      $.each(data, function (key, val) {
+                        if((val[2]==x))
+                          {
+                            html+='<br><div style="color:blue;"><center><p><b><u>Query Resolving Comments:</b></u></p>'+val[7]+'</div></center><br>';
+                           flag=1;
+                          }
+                          else{
+
+
+                          }
+                          })
+                                if(flag==1)
+                                {
+
+                                }
+                                else {
+                                  alert("You didn't ask any Queries");
+                                }
+                                html += '</html>'
+                                $("#qu").html(html);
+                            })
+
+                        }
+
+
+                })
+    });
+
+
+
+
+
+        </script>
+  </body>
+</html>

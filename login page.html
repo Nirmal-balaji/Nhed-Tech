@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <meta charset="utf-8">
+    <title>Nhed Tech Learning Program</title>
+        <link rel="shortcut icon" href="favicon.jpg">
+    <style media="screen">
+      <style media="screen">
+        body{
+          background-image:url(sky.jpg);
+          background-size: cover;
+          background-attachment: fixed;
+        }
+
+
+              .popup{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                margin-left: 30%;
+                margin-top:10%;
+              }
+
+              .popup-content{
+                height: 50%;
+                width: 40%;
+                background: white;
+                padding: 20px;
+                border-radius: 5px;
+                position: relative;
+              }
+
+
+
+
+            h1{
+              position: absolute;
+              padding: 3px;
+              float: left;
+              margin-left: 2%;
+              margin-top: 10px;
+            }
+
+            nav{
+              background: green;
+              height: 80px;
+              width: 100%;
+            }
+
+            nav ul{
+              float: right;
+              margin-right: 20px;
+            }
+
+            nav ul li{
+              display: inline-block;
+              line-height: 80px;
+              margin: 0 5px;
+            }
+
+            nav ul li a{
+              color:white;
+              font-size: 17px;
+              padding: 7px 13px;
+              border-radius: 3px;
+              text-transform: uppercase;
+            }
+
+            a:hover{
+              background: #3366ff;
+              transition: .5s;
+            }
+
+            .button{
+              background: white;
+              padding: 10px 15px;
+              font-weight: bolder;
+              text-transform: uppercase;
+              font-size: 18px;
+              border-radius: 5px;
+              box-shadow: 6px 6px 29px -4px rgba(0,0,0,0.75);
+              margin-top: 25px;
+              text-decoration: none;
+              transition: 0.4s;
+            }
+
+
+            input{
+              margin: 20px auto;
+              display: block;
+              width: 50%;
+              padding: 8px;
+              border: 1px solid gray;
+            }
+
+            .close{
+              position: absolute;
+              top: -15px;
+              right: -15px;
+              background: white;
+              height: 20px;
+              width: 20px;
+              border-radius: 50%;
+              box-shadow: 6px 6px 29px -4px rgba(0,0,0,0.75);
+              cursor: pointer;
+            }
+
+            .bcd{
+              display: none;
+            }
+
+
+            .cde{
+              display: none;
+            }
+
+            .def{
+              display: none;
+            }
+
+            .efg{
+              display: none;
+            }
+
+            .fgh{
+              display: none;
+            }
+
+            .ghi{
+              display: none;
+            }
+
+            .hij{
+              display: none;
+            }
+
+            .ijk{
+              display: none;
+            }
+
+            .jkl{
+              display: none;
+            }
+
+            .klm{
+              display: none;
+            }
+
+            .lmn{
+              display: none;
+            }
+
+            .mno{
+              display: none;
+            }
+
+            .nop{
+              display: none;
+            }
+
+
+                        .opq{
+                          display: none;
+                        }
+
+                        .pqr{
+                          display: none;
+                        }
+
+                        .qrs{
+                          display: none;
+                        }
+
+                        .rst{
+                          display: none;
+                        }
+
+                        .stu{
+                          display: none;
+                        }
+
+                        .tuv{
+                          display: none;
+                        }
+
+                        .uvw{
+                          display: none;
+                        }
+
+
+    </style>
+    <script language="JavaScript">
+
+    //////////F12 disable code////////////////////////
+        document.onkeypress = function (event) {
+            event = (event || window.event);
+            if (event.keyCode == 123) {
+               //alert('No F-12');
+                return false;
+            }
+        }
+        document.onmousedown = function (event) {
+            event = (event || window.event);
+            if (event.keyCode == 123) {
+                //alert('No F-keys');
+                return false;
+            }
+        }
+    document.onkeydown = function (event) {
+            event = (event || window.event);
+            if (event.keyCode == 123) {
+                //alert('No F-keys');
+                return false;
+            }
+        }
+    /////////////////////end///////////////////////
+
+
+    //Disable right click script
+    //visit http://www.rainbow.arch.scriptmania.com/scripts/
+    var message="Sorry, right-click has been disabled";
+    ///////////////////////////////////
+    function clickIE() {if (document.all) {(message);return false;}}
+    function clickNS(e) {if
+    (document.layers||(document.getElementById&&!document.all)) {
+    if (e.which==2||e.which==3) {(message);return false;}}}
+    if (document.layers)
+    {document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+    else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+    document.oncontextmenu=new Function("return false")
+    //
+    function disableCtrlKeyCombination(e)
+    {
+    //list all CTRL + key combinations you want to disable
+    var forbiddenKeys = new Array( 'i' , 'u' );
+    var key;
+    var isCtrl;
+    if(window.event)
+    {
+    key = window.event.keyCode;     //IE
+    if(window.event.ctrlKey)
+    isCtrl = true;
+    else
+    isCtrl = false;
+    }
+    else
+    {
+    key = e.which;     //firefox
+    if(e.ctrlKey)
+    isCtrl = true;
+    else
+    isCtrl = false;
+    }
+    //if ctrl is pressed check if other key is in forbidenKeys array
+    if(isCtrl)
+    {
+    for(i=0; i<forbiddenKeys.length; i++)
+    {
+    //case-insensitive comparation
+    if(forbiddenKeys[i].toLowerCase() == String.fromCharCode(key).toLowerCase())
+    {
+
+    return false;
+    }
+    }
+    }
+    return true;
+    }
+    </script>
+
+    <script language="JavaScript">
+
+function disableCtrlKeyCombination(e)
+{
+//list all CTRL + key combinations you want to disable
+var forbiddenKeys = new Array('a', 'i', 'c', 'x', 'v', 'j' , 'w' , 'u');
+var key;
+var isCtrl;
+if(window.event)
+{
+key = window.event.keyCode;     //IE
+if(window.event.ctrlKey)
+isCtrl = true;
+else
+isCtrl = false;
+}
+else
+{
+key = e.which;     //firefox
+if(e.ctrlKey)
+isCtrl = true;
+else
+isCtrl = false;
+}
+//if ctrl is pressed check if other key is in forbidenKeys array
+if(isCtrl)
+{
+for(i=0; i<forbiddenKeys.length; i++)
+{
+//case-insensitive comparation
+if(forbiddenKeys[i].toLowerCase() == String.fromCharCode(key).toLowerCase())
+{
+
+return false;
+}
+}
+}
+return true;
+}
+</script>
+  </head>
+    <body onkeypress="return disableCtrlKeyCombination(event);" onkeydown="return disableCtrlKeyCombination(event);" oncontextmenu="return false" bgcolor="green">
+    <div class="abc">
+      <h1><font color="white">NHED TECH</font></h1>
+    <center>
+
+
+    <div class="popup">
+      <div class="popup-content">
+        <h2>Welcome to Nhed Tech Learning Program</h2><br>
+        <label>User ID</label>
+        <input id="ui" type="text" placeholder="User ID">
+        <label>Password</label>
+        <input id="pw" type="password" placeholder="Password">
+        <a href="#" class="button" id="loadData")>Login</a>
+      </div>
+    </div>
+    </div>
+
+    <div class="bcd">
+    <h1><font color="white">NHED TECH</font></h1>
+   <nav>
+     <ul>
+       <li><a href="#">Home</a></li>
+       <li><a href="file:///E:/Nedtech%20Website%20Files/Nhed%20tech%20Page/Query%20Login%20Page.html" onclick="">Query</a></li>
+       <li><a href="file:///E:/Nedtech%20Website%20Files/Nhed%20tech%20Page/Quiz%20Login%20Page.html" onclick="">Quizes</a></li>
+       <li><a href="#" onclick="">Student Library</a></li>
+     </ul>
+   </nav>
+   <br>
+    </div>
+    <div class="cde">
+      <center>
+      <h2 align="center"><font color="white">Welcome <span id="aa"></span> to Maths Session.</font></h2>
+      </center>
+    </div>
+
+    <div class="def">
+      <video width="33%" height="33%" align="center" src="hgbsjahxjsbhydecbeywigfbrewibgfiregfbv.mp4" controls="controls" poster="Vid-1.jpg" video="web/mp4"></video>&nbsp;
+      <video width="33%" height="33%" align="center" src="ouyhiewuuuuuufigwstftqwdygewufhirugy.mp4" controls="controls" poster="Vid-2.jpg" video="web/mp4"></video>&nbsp;
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+    </div><br>
+    <div class="efg">
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+    </div><br>
+    <div class="fgh">
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+    </div><br>
+    <div class="ghi">
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+    </div><br>
+    <div class="hij">
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+    </div><br>
+    <div class="ijk">
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+    </div><br>
+    <div class="jkl">
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+    </div><br>
+    <div class="klm">
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+    </div><br>
+    <div class="lmn">
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+    </div><br>
+    <div class="mno">
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+    </div><br>
+    <div class="nop">
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+      <video width="33%" height="33%" align="center" src=" " controls="controls" poster=" " video="web/mp4"></video>&nbsp;
+    </div><br>
+
+
+
+    <script>
+$(function () {
+     $('#loadData').click(function () {
+              var x = document.getElementById("ui").value;
+              var y = document.getElementById("pw").value;
+              if(x==""||y=="")
+              {
+                alert("Please fill all the fields");
+              }
+              else {
+
+
+                var url = 'https://script.google.com/macros/s/AKfycbxkP4GAqOaX2X_0QQ8gH7C2GnBse236c3AWzdKXxXu4pcmcBTCKld_nr8x7qNwQcQqp/exec'
+                $.getJSON(url, function (data) {
+                  var flag=0;
+ var x = document.getElementById("ui").value;
+                  var y = document.getElementById("pw").value;
+                  console.log(x);
+ console.log(y);
+                  $.each(data, function (key, val) {
+                    if((val[0]==x&&val[1]==y))
+                      {
+                       document.querySelector(".popup").style.display = "none";
+            document.querySelector(".abc").style.display = "none";
+            document.querySelector(".bcd").style.display = "flex";
+            document.querySelector(".cde").style.display = "flex";
+            document.querySelector(".def").style.display = "flex";
+            document.querySelector(".efg").style.display = "flex";
+            document.querySelector(".fgh").style.display = "flex";
+            document.querySelector(".ghi").style.display = "flex";
+            document.querySelector(".hij").style.display = "flex";
+            document.querySelector(".ijk").style.display = "flex";
+            document.querySelector(".jkl").style.display = "flex";
+            document.querySelector(".klm").style.display = "flex";
+            document.querySelector(".lmn").style.display = "flex";
+            document.querySelector(".mno").style.display = "flex";
+            document.querySelector(".nop").style.display = "flex";
+            const con = document.getElementById("aa");
+            con.innerHTML = val[2];
+flag=1;
+ return false;
+                      }
+                      else{
+
+
+                      }
+                      })
+                            if(flag==1)
+                            {
+
+                            }
+                            else {
+                              alert("Username or Password incorrect");
+                            }
+
+                        })
+                    }
+
+
+            })
+});
+
+
+
+
+
+    </script>
+  </body>
+</html>
